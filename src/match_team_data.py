@@ -31,6 +31,8 @@ class MatchTeamData():
         self.cargo_points = (self.sandstorm_rocket_cargo + self.sandstorm_cargo_ship_cargo + self.rocket_cargo_level_3 + self.rocket_cargo_level_2 + self.rocket_cargo_level_1 + self.cargo_ship_cargo) * 3
         self.climb_points = get_climb_points(self.climb_level)
         self.total_points = self.hatch_points + self.cargo_points + self.climb_points
+        # self.total_points = self.hatch_points + self.cargo_points
+
 
 
 def string_to_num(string_num_dict : dict, key : str):
