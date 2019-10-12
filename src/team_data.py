@@ -2,6 +2,7 @@ import statistics
 from match_team_data import MatchTeamData
 import math
 
+
 class TeamData():
 
     def __init__(self, team_number, match_data : list):
