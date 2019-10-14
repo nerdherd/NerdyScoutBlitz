@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spreadsheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/spreadsheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/team_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/team_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teams.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/teams.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.spreadsheet">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="NerdyScoutBlitz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.spreadsheet" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.spreadsheet" />
         <item itemvalue="Python.team_data" />
         <item itemvalue="Python.match_team_data" />
       </list>

@@ -39,3 +39,4 @@ def generate_csv(team_list: list):
     teams_to_csv(team_data_list)
 
 # generate_csv([330, 7042, 687])
+generate_csv(beach_blitz_team_list)

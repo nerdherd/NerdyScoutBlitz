@@ -26,6 +26,8 @@ class TeamData():
         self.mode_climb_level = 0
         self.median_points_per_match = 0
         self.mean_points_per_match = 0
+        self.max_hatches = 0
+        self.max_cargo = 0
         self.calc()
 
     def calc(self):
@@ -57,14 +59,16 @@ class TeamData():
             self.mode_climb_level = max(self.climb_level_data)
         self.mean_points_per_match = statistics.mean(self.point_data)
         self.median_points_per_match = statistics.median(self.point_data)
+        self.max_cargo = max(self.cargo_data)
+        self.max_hatches = max(self.hatch_data)
 
 
 def teams_to_csv(teams: list):
     csv = open("teams.csv", "w")
-    csv.write("Team,AverageHatches,AverageCargo,MedianHatches,MedianCargo,MaxClimbLevel,MostFrequentClimbLevel,MeanPointsPerMatch,MedianPointsPerMatch,Comments\n")
+    csv.write("Team,AverageHatches,AverageCargo,MedianHatches,MedianCargo,MaxClimbLevel,MostFrequentClimbLevel,MeanPointsPerMatch,MedianPointsPerMatch,MaxCargo,MaxHatches,Comments\n")
     for team in teams:
-    #     team = TeamData(0, [])
-        csv.write(data_to_csv_string([team.team_number, team.mean_hatches, team.mean_cargo, team.median_hatches, team.median_cargo, team.max_climb_level, team.mode_climb_level, team.mean_points_per_match, team.median_points_per_match, format_comments(team.comments)]))
+        # team = TeamData(0, [])
+        csv.write(data_to_csv_string([team.team_number, team.mean_hatches, team.mean_cargo, team.median_hatches, team.median_cargo, team.max_climb_level, team.mode_climb_level, team.mean_points_per_match, team.median_points_per_match, team.max_cargo, team.max_hatches, format_comments(team.comments)]))
     # csv.write()
     csv.close()
 
