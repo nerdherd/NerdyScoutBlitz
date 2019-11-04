@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nerdyscoutblitz",
+  "private_key_id": "52160ecf03553b7feec448d7540be8e8f58d4f67",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCxqPcnsaJM8fmY\n9PpUqUSwTmjV9g4YKC2ayVOnRa0aZpmJL0btOLpWEyJMFCDhDSZUSXTU+QX7SyM7\nZBSQv7ZNxpXB8yjgXazYQNqilGH/R1mL4dX0KFXEWCpoDypvAL6lRqNq5CkU4/a3\nzWiCOTpnnblm8X2MX9l8OEUAq2cDsqokkHNITjDf23Ss3xhJIfnN5wWE+TV6w+pX\n5Ehd4S3nQO0ztTAWNunYLw5LB2b/26+kn6imj3Iq0BXwkF6K0ouuTWnsnG1CxPuh\nHezC21EVy9sqtTtYPvmXUwj/uKrRu+orBgNQMCtHrFAUk0KDP67kQ8VZscm15bHM\nCtMKjAHRAgMBAAECggEAHXURKf07lnuGsbRo73GziHIv0s4+DwZWbXRVUQZuCdMa\nQRNcNMgzqUL57FhoDTjDcrVNUGTL95tBR78z475N6X50ZVi+ndkaaC70sYFd8Fhx\nwg5bjeTEN86QlXlyRT5/3eKlBPu4zhRwW5CM9A6uHvEZhTakZQqdgonH8zD4XzXR\nWnH7eTWr/eu4Q0UQc9XZnsWcPmpCWapN/WddAjTm/N3Z2/ra2ANbwCr8HRqUkn6n\nRFdv6z0zkhM0QmxBdL2y/efI4mvdJfLSWbfQ0G9T4JvU+pFwHbXbcLSEsjFNcy6V\nmhhO8CH0X0jlJt6y57QdhWYRC7w6lANFCE90vQYcmQKBgQDceEWaicfJXpm6+4Zp\nPe1KCnXfol8fnMimrb5omc4p7f8z1eqaCLRvIPF8+VR1Y8dt8rvMjw9nkp6oGFaP\ng2DRaOrYlKFaewDHi/eOxUFoKGqBOAZWDTcWkxzzmrR/licG4sInjN+2wrKkF6CH\nVP8QTlLrPKiS+qI7+Onnl3YSBQKBgQDOSocimJeY7cNLJ+XIdEIpxVI9GgMCZc4i\nUwILH7s1N3eV6iMNkaIx4jS2+bz8xlOEZruyqOa56VKUelIZu845o2yz8ku5iGf5\n4UsbKR9ZtzzSVcLSa0uFJUPYGhCCn7eAJK6OBVQAKFwmAPrvVHzUf9Q3wH29PuOl\nbE6iVfV+XQKBgQDVXkjukR2bk0Rwo/CnddlqaMk/T+ODsra2KTw3+3J9PepYflT4\nEiidzGIqMxs8KP7fN6XtCR89e7a0tClB50ISKNnwFZg6+wP8G0fRErKEXWkF+fSX\n315LKMFCOZ0qRWUr0tVYdYwlUjSVfpBLqUTYwRSauS/kX1AXfoTRL9KDCQKBgDRY\nqQ3YVq+Rtbq+dwp0pc1fqsyiax0SpEoFckFMXf7VAl1iOl7ZE6VA10uO96vUz6CL\nSRm+zj1ivXe7ylWJWH07wPuwghKkUG4SAzLzLmdfnelppbQrUdCJcjvF8WaUDMZR\niJG1PGmF1Ew4d3R/peVuQnWbPMzmxnFVmGaNFWxpAoGBANA8cbbEg6oQD2RhDdgc\noNfYGMP/Alc+4zyDl9oCP8dqcprzMdjMe4vmxkqUO6OuPCErjoGkx6W3FdeaGqRB\n6+4Iy+CVkXG60MnsG/3Q36zspro+WIwqZRN7YfSVzyYb19eHkFDdCcT60YQSbOu9\nUdSPhKd7jWv3jtAv9Wiuyx5N\n-----END PRIVATE KEY-----\n",
+  "client_email": "nerdyscout2019@nerdyscoutblitz.iam.gserviceaccount.com",
+  "client_id": "101097873802724641188",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nerdyscout2019%40nerdyscoutblitz.iam.gserviceaccount.com"
+}
