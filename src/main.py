@@ -36,7 +36,15 @@ def generate_csv(team_list: list):
                 team_dict.update({team_num : data_array})
     for team_num in team_list:
         team_data_list.append(TeamData(team_num, team_dict.get(team_num)))
-    teams_to_csv(team_data_list)
+    # teams_to_csv(team_data_list)
+    # print(team_data_list[0].team_number)
 
+    analyzed_sheet = spreadsheet.get_sheet("UpdatedAnalysisSheet")
+    analyzed_sheet.clear()
+    analyzed_sheet.append_row(["Team", "AverageHatches", "AverageCargo", "MedianHatches", "MedianCargo", "MaxClimbLevel","MostFrequentClimbLevel", "MeanPointsPerMatch", "MedianPointsPerMatch", "MaxCargo", "MaxHatches", "Comments"])
+    for team in team_data_list:
+        analyzed_sheet.append_row(team.to_list())
 # generate_csv([330, 7042, 687])
+
+
 generate_csv(beach_blitz_team_list)

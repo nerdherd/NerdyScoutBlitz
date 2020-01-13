@@ -45,7 +45,7 @@ class TeamData():
             self.point_data.append(match.total_points)
             self.climb_level_data.append(match.climb_level)
         # self.
-        print(self.team_number)
+        # print(self.team_number)
         self.mean_hatches = statistics.mean(self.hatch_data)
         self.mean_cargo = statistics.mean(self.cargo_data)
         self.median_hatches = statistics.median(self.hatch_data)
@@ -62,6 +62,8 @@ class TeamData():
         self.max_cargo = max(self.cargo_data)
         self.max_hatches = max(self.hatch_data)
 
+    def to_list(self):
+        return [self.team_number, self.mean_hatches, self.mean_cargo, self.median_hatches, self.median_cargo, self.max_climb_level, self.mode_climb_level, self.mean_points_per_match, self.median_points_per_match, self.max_cargo, self.max_hatches]
 
 def teams_to_csv(teams: list):
     csv = open("teams.csv", "w")
