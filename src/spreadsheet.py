@@ -5,7 +5,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 # use creds to create a client to interact with the Google Drive API
 scope =  ['https://spreadsheets.google.com/feeds',
 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name("NerdyScoutBlitz-52160ecf0355.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("src/NerdyScoutBlitz-52160ecf0355.json", scope)
 client = gspread.authorize(creds)
 
 # Find a workbook by name and open the first sheet
@@ -15,7 +15,7 @@ sheet = client.open("Beach Blitz Match Scouting (Responses)").sheet1
 def get_sheet(sheet_name : str):
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name("NerdyScoutBlitz-52160ecf0355.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("src/NerdyScoutBlitz-52160ecf0355.json", scope)
     client = gspread.authorize(creds)
     sheet = client.open(sheet_name).sheet1
     return sheet
