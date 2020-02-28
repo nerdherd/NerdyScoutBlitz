@@ -1,5 +1,5 @@
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+import deps.gspread
+from deps.oauth2client.service_account import ServiceAccountCredentials
 
 import spreadsheet
 

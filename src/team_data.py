@@ -1,6 +1,5 @@
 import statistics
 from match_team_data import MatchTeamData
-import math
 
 
 class TeamData():

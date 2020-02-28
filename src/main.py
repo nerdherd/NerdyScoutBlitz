@@ -1,5 +1,5 @@
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+import deps.gspread as gspread
+from deps.oauth2client.service_account import ServiceAccountCredentials
 
 import spreadsheet
 from match_team_data import MatchTeamData
