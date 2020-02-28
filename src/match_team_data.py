@@ -5,33 +5,33 @@ class MatchTeamData():
         self.raw_data = raw_data
         self.match_number = int(raw_data[2])
         self.team_number = int(raw_data[3])
-        self.hab_start = hab_level_number(self.raw_data[5])
-        self.preload = preload_number(self.raw_data[6])
-        self.autoline = autoline_number(self.raw_data[7])
-        self.sandstorm_rocket_hatches = int(self.raw_data[8])
-        self.sandstorm_rocket_cargo = int(self.raw_data[9])
-        self.sandstorm_cargo_ship_hatches = int(self.raw_data[10])
-        self.sandstorm_cargo_ship_cargo = int(self.raw_data[11])
-        self.sandstorm_hatches_dropped = int(self.raw_data[12])
-        self.sandstorm_cargo_dropped = int(self.raw_data[13])
-        self.rocket_hatches_level_1 = int(self.raw_data[14])
-        self.rocket_hatches_level_2 = int(self.raw_data[15])
-        self.rocket_hatches_level_3 = int(self.raw_data[16])
-        self.rocket_cargo_level_1 = int(self.raw_data[17])
-        self.rocket_cargo_level_2 = int(self.raw_data[18])
-        self.rocket_cargo_level_3 = int(self.raw_data[19])
-        self.cargo_ship_hatches = int(self.raw_data[20])
-        self.cargo_ship_cargo = int(self.raw_data[21])
-        self.played_defense = autoline_number(self.raw_data[22])
-        self.defense_type = self.raw_data[23]
-        self.climb_level = int(self.raw_data[24])
-        self.driver_skill = int(self.raw_data[25])
-        self.comments = self.raw_data[26]
-        self.hatch_points = (self.sandstorm_rocket_hatches + self.sandstorm_cargo_ship_hatches + self.rocket_hatches_level_3 + self.rocket_hatches_level_2 + self.rocket_hatches_level_1 + self.cargo_ship_hatches) * 2
-        self.cargo_points = (self.sandstorm_rocket_cargo + self.sandstorm_cargo_ship_cargo + self.rocket_cargo_level_3 + self.rocket_cargo_level_2 + self.rocket_cargo_level_1 + self.cargo_ship_cargo) * 3
-        self.climb_points = get_climb_points(self.climb_level)
-        self.total_points = self.hatch_points + self.cargo_points + self.climb_points
-        # self.total_points = self.hatch_points + self.cargo_points
+        self.initiation_line = autoline_number(self.raw_data[5])
+        self.auto_balls_high = int(self.raw_data[6])
+        self.auto_balls_low = int(self.raw_data[7])
+        self.auto_balls_missed_high = int(self.raw_data[8])
+        self.auto_balls_missed_low = int(self.raw_data[9])
+        self.auto_balls_picked_up = int(self.raw_data[10])
+        self.high_balls = int(self.raw_data[11])
+        self.low_balls = int(self.raw_data[12])
+        self.high_balls_missed = int(self.raw_data[13])
+        self.low_balls_missed = int(self.raw_data[14])
+        self.control_panel_rot = autoline_number(self.raw_data[16])
+        self.control_panel_pos = autoline_number(self.raw_data[17])
+        self.control_panel_speed = autoline_number(self.raw_data[18])
+        self.defense = autoline_number(self.raw_data[19])
+        self.defense_type = self.raw_data[20]
+        # change to number?
+        self.climb_location = self.raw_data[21]
+        self.buddy_climb = int(autoline_number(raw_data[22]))
+        self.driver_skill = autoline_number(self.raw_data[23])
+        self.comments = self.raw_data[24]
+        self.inner_port_accuracy = float(int(self.raw_data[25])/5)
+        self.climb_points = get_climb_points(self.climb_location)
+        self.auto_points = 5 + self.auto_balls_high * (1- self.inner_port_accuracy) * 2 + self.auto_balls_high * self.inner_port_accuracy * 3 + self.auto_balls_low
+        self.teleop_points = self.high_balls * (1 - self.inner_port_accuracy) * 2 + self.high_balls * self.inner_port_accuracy * 3 + self.low_balls + self.climb_points
+        self.high_shot_accuracy = 1 - ((self.high_balls_missed + self.auto_balls_missed_high) / (self.high_balls + self.auto_balls_high))
+
+
 
 
 
@@ -52,13 +52,11 @@ def preload_number(preload : str):
 def autoline_number(cross : str):
     return string_to_num({'No' : 0, 'Yes' : 1}, cross)
 
-def get_climb_points(level : int):
-    if level == 1:
-        return 3
-    elif level == 2:
-        return 6
-    elif level == 3:
-        return 12
+def get_climb_points(location : str):
+    if location == "Middle":
+        return 25
+    elif location == "Side":
+        return 25
     else:
         return 0
 
