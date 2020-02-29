@@ -88,7 +88,7 @@ class TeamData():
         # self.max_hatches = max(self.hatch_data)
 
     def to_list(self):
-        return  [self.team_number, self.mean_auto_score, self.mean_auto_balls_low, self.mean_auto_balls_high, self.max_auto_score, self.max_auto_balls_low, self.max_auto_balls_high, self.mean_teleop_balls_low, self.mean_teleop_balls_high, self.max_teleop_balls_low, self.max_teleop_balls_high, self.mean_teleop_score, self.max_teleop_score, self.mean_ball_accuracy, self.climb_frequency]
+        return  [self.team_number, self.mean_auto_score, self.max_auto_score, self.mean_auto_balls_low, self.mean_auto_balls_high, self.max_auto_balls_low, self.max_auto_balls_high, self.mean_teleop_balls_low, self.mean_teleop_balls_high, self.max_teleop_balls_low, self.max_teleop_balls_high, self.mean_teleop_score, self.max_teleop_score, self.mean_ball_accuracy, self.climb_frequency]
 
 def teams_to_csv(teams: list):
     csv = open("teams.csv", "w")

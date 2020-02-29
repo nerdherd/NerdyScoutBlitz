@@ -46,4 +46,6 @@ def generate_csv(team_list: list):
 # generate_csv([330, 7042, 687])
 
 
-generate_csv(team_list)
+# generate_csv(team_list)
+def run():
+    generate_csv(team_list)
