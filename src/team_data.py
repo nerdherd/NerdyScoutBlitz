@@ -15,6 +15,8 @@ class TeamData():
         self.teleop_ball_data_low = []
         self.ball_accuracy_data = []
         self.climb_data = []
+        self.control_panel_pos_data = []
+        self.control_panel_rot_data = []
 
         self.mean_auto_score = 0
         self.mean_auto_balls_high = 0
@@ -30,6 +32,8 @@ class TeamData():
         self.max_teleop_score = 0
         self.mean_ball_accuracy = 0
         self.climb_frequency = 0
+        self.control_panel_rot_freq = 0
+        self.control_panel_pos_freq = 0
         self.calc()
 
     def calc(self):
@@ -43,30 +47,34 @@ class TeamData():
             self.teleop_score_data.append(match.teleop_points)
             self.ball_accuracy_data.append(match.high_shot_accuracy)
             self.climb_data.append(match.climb_points)
+            self.control_panel_pos_data.append(match.control_panel_pos)
+            self.control_panel_rot_data.append(match.control_panel_rot)
 
-            self.mean_auto_score = statistics.mean(self.auto_score_data)
-            self.mean_auto_balls_high = statistics.mean(self.auto_ball_data_high)
-            # print(self.auto_ball_data_high)
-            # print(self.mean_auto_balls_high)
-            self.mean_auto_balls_low = statistics.mean(self.auto_ball_data_low)
-            self.mean_teleop_balls_high = statistics.mean(self.teleop_ball_data_high)
-            self.mean_teleop_balls_low = statistics.mean(self.teleop_ball_data_low)
-            self.mean_teleop_score = statistics.mean(self.teleop_score_data)
-            self.mean_ball_accuracy = statistics.mean(self.ball_accuracy_data)
+        self.mean_auto_score = statistics.mean(self.auto_score_data)
+        self.mean_auto_balls_high = statistics.mean(self.auto_ball_data_high)
+        # print(self.auto_ball_data_high)
+        # print(self.mean_auto_balls_high)
+        self.mean_auto_balls_low = statistics.mean(self.auto_ball_data_low)
+        self.mean_teleop_balls_high = statistics.mean(self.teleop_ball_data_high)
+        self.mean_teleop_balls_low = statistics.mean(self.teleop_ball_data_low)
+        self.mean_teleop_score = statistics.mean(self.teleop_score_data)
+        self.mean_ball_accuracy = statistics.mean(self.ball_accuracy_data)
 
-            self.max_auto_balls_high = max(self.auto_ball_data_high)
-            self.max_auto_balls_low = max(self.auto_ball_data_low)
-            self.max_auto_score = max(self.auto_score_data)
-            self.max_teleop_balls_high = max(self.teleop_ball_data_high)
-            self.max_teleop_balls_low = max(self.teleop_ball_data_low)
-            self.max_teleop_score = max(self.teleop_score_data)
-            print(self.climb_data)
-            self.climb_frequency = self.climb_data.count(25)
-            # for x in self.climb_data:
-                # print(x)
-                # if x == 25:
-                #     self.climb_frequency += 1
-            print(self.climb_frequency)
+        self.max_auto_balls_high = max(self.auto_ball_data_high)
+        self.max_auto_balls_low = max(self.auto_ball_data_low)
+        self.max_auto_score = max(self.auto_score_data)
+        self.max_teleop_balls_high = max(self.teleop_ball_data_high)
+        self.max_teleop_balls_low = max(self.teleop_ball_data_low)
+        self.max_teleop_score = max(self.teleop_score_data)
+        # print(self.climb_data)
+        self.climb_frequency = self.climb_data.count(25)
+        self.control_panel_pos_freq = self.control_panel_pos_data.count(1)
+        self.control_panel_rot_freq = self.control_panel_rot_data.count(1)
+        # for x in self.climb_data:
+            # print(x)
+            # if x == 25:
+            #     self.climb_frequency += 1
+        # print(self.climb_frequency)
 
 
         # self.
@@ -88,7 +96,7 @@ class TeamData():
         # self.max_hatches = max(self.hatch_data)
 
     def to_list(self):
-        return  [self.team_number, self.mean_auto_score, self.max_auto_score, self.mean_auto_balls_low, self.mean_auto_balls_high, self.max_auto_balls_low, self.max_auto_balls_high, self.mean_teleop_balls_low, self.mean_teleop_balls_high, self.max_teleop_balls_low, self.max_teleop_balls_high, self.mean_teleop_score, self.max_teleop_score, self.mean_ball_accuracy, self.climb_frequency]
+        return  [self.team_number, self.mean_auto_score, self.max_auto_score, self.mean_auto_balls_low, self.mean_auto_balls_high, self.max_auto_balls_low, self.max_auto_balls_high, self.mean_teleop_balls_low, self.mean_teleop_balls_high, self.max_teleop_balls_low, self.max_teleop_balls_high, self.mean_teleop_score, self.max_teleop_score, self.mean_ball_accuracy, self.climb_frequency, self.control_panel_rot_freq, self.control_panel_pos_freq, len(self.match_data)]
 
 def teams_to_csv(teams: list):
     csv = open("teams.csv", "w")

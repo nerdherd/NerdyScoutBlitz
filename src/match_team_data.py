@@ -25,12 +25,17 @@ class MatchTeamData():
         self.buddy_climb = int(autoline_number(raw_data[22]))
         self.driver_skill = autoline_number(self.raw_data[23])
         self.comments = self.raw_data[24]
-        self.inner_port_accuracy = float(int(self.raw_data[25])/5)
+        if (self.raw_data[25] != ''):
+            self.inner_port_accuracy = float(int(self.raw_data[25])/5)
+        else:
+            self.inner_port_accuracy = 0
         self.climb_points = get_climb_points(self.climb_location)
         self.auto_points = 5 + self.auto_balls_high * (1- self.inner_port_accuracy) * 2 + self.auto_balls_high * self.inner_port_accuracy * 3 + self.auto_balls_low
         self.teleop_points = self.high_balls * (1 - self.inner_port_accuracy) * 2 + self.high_balls * self.inner_port_accuracy * 3 + self.low_balls + self.climb_points
-        self.high_shot_accuracy = 1 - ((self.high_balls_missed + self.auto_balls_missed_high) / (self.high_balls + self.auto_balls_high))
-
+        if (self.high_balls != 0) and (self.auto_balls_high != 0):
+            self.high_shot_accuracy = 1 - ((self.high_balls_missed + self.auto_balls_missed_high) / (self.high_balls + self.auto_balls_high))
+        else:
+            self.high_shot_accuracy = 0
 
 
 

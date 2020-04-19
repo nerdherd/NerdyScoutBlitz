@@ -1,5 +1,5 @@
-import deps.gspread as gspread
-from deps.oauth2client.service_account import ServiceAccountCredentials
+import gspread as gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 
 # use creds to create a client to interact with the Google Drive API
